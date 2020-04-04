@@ -1,0 +1,302 @@
+//CLASE PRINCIPAL
+
+public class Posada {
+    
+   
+   
+   
+    public static void main(String[] args) {
+    	
+    Posada opp = new Posada (); 
+    	login ho = new login();
+    
+    }
+
+
+
+}
+
+
+//CLASE LOGIN
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import java.awt.Image.*;
+
+public class login extends JFrame implements ActionListener{
+	
+	
+	
+	JFrame ven = new JFrame("Posada abc");
+	JLabel eti = new JLabel();
+	JLabel user = new JLabel("Usuario");
+	JLabel password = new JLabel("password");
+	JTextField u = new JTextField(20);
+	JTextField p = new JTextField(25);
+	JLabel im = new JLabel();
+	JButton in = new JButton("Iniciar");
+	ImageIcon imag = new ImageIcon(getClass().getResource("hotel.png"));
+	
+public  login(){
+	
+	    
+	    ven.setBounds(300,100,300,400);
+		ven.setTitle("Inicio");
+		ven.setVisible(true);
+		ven.add(eti);
+
+		
+		user.setBounds(20,10,100,30);
+		eti.add(user);
+		
+		u.setBounds(80,10,100,30);
+		eti.add(u);
+		
+		password.setBounds(20,80,100,30);
+		eti.add(password);
+		
+		p.setBounds(90,80,100,30);
+		eti.add(p);
+		
+		in.setBounds(90,130,100,50);
+		in.setText("iniciar");
+		eti.add(in);
+		in.addActionListener(this);
+		
+		
+		im.setBounds(100,180,90,130);
+         eti.add(im);
+        ImageIcon icono = new ImageIcon(imag.getImage().getScaledInstance(im.getWidth(),im.getHeight(), Image.SCALE_DEFAULT));
+    
+        
+        im.setIcon(icono);
+       
+
+
+          
+ven.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+
+}
+
+
+
+ public void actionPerformed(ActionEvent evento){
+ 	
+ 	
+ 	
+ if(evento.getSource()==in){
+      	
+
+        if(p.getText().equals("1234") && u.getText().equals("ADMI")){
+           	
+           	
+           //7JOptionPane.showMessageDialog(null, "Bienvenido \n a la \n programación \n en Java");
+          menu op = new menu();
+          
+          ven.dispose(); 
+           	
+        }
+        else{
+        	JOptionPane.showMessageDialog(null, "Contraceña o Usuario incorrecto");
+        }
+        
+	
+       }
+ }
+
+      
+
+}
+
+//CLASE MENU
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class menu extends JFrame implements ActionListener{
+	
+	JFrame menu = new JFrame();
+	JLabel tabla = new JLabel();
+	ImageIcon uno = new ImageIcon(getClass().getResource("cal.png"));
+    ImageIcon dos = new ImageIcon(getClass().getResource("can.png"));
+	ImageIcon tres = new ImageIcon(getClass().getResource("conf.png"));
+	ImageIcon cuatro = new ImageIcon(getClass().getResource("des.png"));
+	JLabel IMG1= new JLabel();
+	JLabel IMG2= new JLabel();
+    JLabel IMG3= new JLabel(); 
+    JLabel IMG4= new JLabel();
+    JButton B1 = new JButton();
+    JButton B2 = new JButton();
+    JButton B3 = new JButton();
+    JButton B4 = new JButton();
+    JLabel E1 = new JLabel("Agregar reserva");
+    
+	
+	
+	public menu(){
+		
+		
+		
+		menu.setBounds(300,100,500,600);
+		menu.setVisible(true);
+		menu.add(tabla);
+		
+		
+		
+		IMG1.setBounds(10,10,70,70);
+			tabla.add(IMG1);
+			
+		IMG2.setBounds(10,100,70,70);
+			tabla.add(IMG2);
+		
+		IMG3.setBounds(10,190,70,70);
+			tabla.add(IMG3);
+		
+		IMG4.setBounds(10,280,70,70);
+			tabla.add(IMG4);	
+				
+		B1.setBounds(120,20,160,30);
+		B1.setText("Agregar reservacion");
+		tabla.add(B1);
+		B1.addActionListener(this);
+		
+		B2.setBounds(120,120,160,30);
+		B2.setText("Cancelar reservacion");
+		tabla.add(B2);
+		B2.addActionListener(this);
+		
+     	B3.setBounds(120,220,160,30);
+		B3.setText("Configuracion");
+		tabla.add(B3);
+		B3.addActionListener(this);
+		
+        B4.setBounds(120,320,160,30);
+		B4.setText("Desarrolladores");
+		tabla.add(B4);
+		B4.addActionListener(this);
+		
+     	
+     	
+     	
+     	
+     	ImageIcon icono1 = new ImageIcon(uno.getImage().getScaledInstance(IMG1.getWidth(),IMG1.getHeight(), Image.SCALE_DEFAULT));
+      	IMG1.setIcon(icono1);
+      	
+      	ImageIcon icono2 = new ImageIcon(dos.getImage().getScaledInstance(IMG2.getWidth(),IMG2.getHeight(), Image.SCALE_DEFAULT));
+      	IMG2.setIcon(icono2);
+      	
+      	ImageIcon icono3 = new ImageIcon(tres.getImage().getScaledInstance(IMG3.getWidth(),IMG3.getHeight(), Image.SCALE_DEFAULT));
+        IMG3.setIcon(icono3);
+        
+        ImageIcon icono4 = new ImageIcon(cuatro.getImage().getScaledInstance(IMG4.getWidth(),IMG4.getHeight(), Image.SCALE_DEFAULT));
+        IMG4.setIcon(icono4);
+		
+		
+		
+		menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+		}
+		
+		
+		public void actionPerformed(ActionEvent e){
+			
+			if(e.getSource()==B4){
+			des ik = new des();
+			menu.dispose();
+			}
+			
+		}
+
+      
+      
+    
+
+}
+
+
+//CLASE DESARROLLADORES
+
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+public class des extends JFrame implements ActionListener{
+
+JFrame de = new JFrame("Desarolladores");
+JLabel man = new JLabel();
+JLabel Nom = new JLabel();
+JLabel Nom2= new JLabel();
+JLabel Nom3 = new JLabel();
+JLabel Nom4 = new JLabel();
+JLabel Nom5 = new JLabel();
+JButton retro = new JButton();
+ String Nombre[] = { "Jorge armando \n", "Agustin garcia \n", "Fernando mendoza \n","Emelia abigail \n","Pastor sebastian \n" };
+//String Nombres[5]={"Jorge armando n\"};	
+	
+	public des(){
+	
+	try
+ 	{
+	de.setBounds(300,100,400,300);
+	de.setVisible(true);	
+	de.add(man);
+	
+	Nom.setBounds(10,10,120,50);
+	Nom.setText(Nombre[0]);
+	man.add(Nom);
+	
+	Nom2.setBounds(10,60,120,50);
+	Nom2.setText(Nombre[1]);
+	man.add(Nom2);
+	
+	Nom3.setBounds(10,110,120,50);
+	Nom3.setText(Nombre[2]);
+	man.add(Nom3);
+	
+	Nom4.setBounds(10,160,120,50);
+	Nom4.setText(Nombre[3]);
+	man.add(Nom4);
+	
+	Nom5.setBounds(10,210,100,50);
+	Nom5.setText(Nombre[4]);
+	man.add(Nom5);
+	
+	
+	retro.setBounds(180,100,100,40);
+	retro.setText("regresar");
+	man.add(retro);
+	retro.addActionListener(this);
+	
+	de.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ 	}
+ 	
+ 	catch(Exception e){System.out.println(e);	}
+	
+	//System.out.println(e);
+	}
+	
+	
+	public void actionPerformed(ActionEvent e){
+			
+			if(e.getSource()==retro){
+			
+			de.dispose();
+			menu op = new menu();
+			
+			}
+			
+			}	
+
+}
+
+
